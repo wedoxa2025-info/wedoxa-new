@@ -11,10 +11,10 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       plugins: [react()],
-      // ADD THIS SECTION:
-      publicDir: 'public',  // Ensures public files are copied to dist
+      publicDir: 'public',
       build: {
-        copyPublicDir: true,  // Explicitly copy public dir
+        copyPublicDir: true,
+        outDir: 'docs',  // ADD THIS LINE - outputs to docs folder for GitHub Pages
       },
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
